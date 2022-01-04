@@ -18,6 +18,8 @@ jobs:
           curl -s -o schema.zip https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip
           unzip -q -o -d schemas/cf schema.zip
           rm -f schema.zip
+
+          python map/map.py > map/resources.txt
       - uses: peter-evans/create-pull-request@v3
         with:
           commit-message: |
