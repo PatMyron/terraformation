@@ -10,9 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo 'provider "aws" {}' > main.tf
+          echo 'provider "aws" {}
+          provider "azurerm" {}
+          provider "google" {}
+          provider "kubernetes" {}' > main.tf
           terraform init
-          terraform providers schema -json | jq . > schemas/tf/aws.json
+          terraform providers schema -json | jq . > schemas/tf/schema.json
           rm -rf main.tf .terraform*
 
           curl -s -o schema.zip https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip
