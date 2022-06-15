@@ -9,7 +9,7 @@ def mapTypes(cfTypes, tfTypes):
     cfMap[cfType.replace('_', '').replace(':', '').lower()] = cfType
   for tfType in tfTypes:
     try:
-      print(tfType, cfMap[tfType.replace('_', '').replace(':', '').lower()])
+      print(tfType, cfMap[tfType.replace('_', '').replace(':', '').lower().replace('awscc', 'aws')])
     except:
       pass
 
