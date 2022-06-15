@@ -30,4 +30,4 @@ jobs:
             resource provider schema update
           title: resource provider schema update
           delete-branch: true
-          branch: awscc/patch
+          branch: awscc-patch
