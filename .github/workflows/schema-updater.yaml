@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ main ]
+    branches: [ awscc ]
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch: # Enables on-demand/manual triggering
@@ -30,3 +30,4 @@ jobs:
             resource provider schema update
           title: resource provider schema update
           delete-branch: true
+          branch: awscc/patch
