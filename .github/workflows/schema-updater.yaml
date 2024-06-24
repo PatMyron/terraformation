@@ -8,7 +8,7 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: |
           echo 'provider "aws" {}
           provider "awscc" {}
@@ -24,7 +24,7 @@ jobs:
           rm -f schema.zip
 
           python map/map.py > map/resources.txt
-      - uses: peter-evans/create-pull-request@v3
+      - uses: peter-evans/create-pull-request@v6
         with:
           commit-message: |
             resource provider schema update
